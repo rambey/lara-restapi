@@ -63,12 +63,12 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        if (\Illuminate\Support\Facades\Gate::denies('update-event', $event)) {
-            return response()->json([
-                'message' => 'You are not autrhorized to update this event!'
-            ], 403);
-        }
-        
+        // if (\Illuminate\Support\Facades\Gate::denies('update-event', $event)) {
+        //     return response()->json([
+        //         'message' => 'You are not autrhorized to update this event!'
+        //     ], 403);
+        // }
+
         $event->update(
             $request->validate([
                 'name' => 'sometimes|string|max:255',
